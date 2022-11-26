@@ -12,7 +12,8 @@ class MyThemeData {
           iconTheme: IconThemeData(color: colorBlack)),
       textTheme: TextTheme(
           headline1: TextStyle(
-              fontSize: 30, color: colorBlack, fontWeight: FontWeight.bold)),
+              fontSize: 30, color: colorBlack, fontWeight: FontWeight.bold),
+          subtitle1: TextStyle(fontSize: 20, color: colorBlack)),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: colorGold,
           selectedItemColor: colorBlack,
