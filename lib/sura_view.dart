@@ -43,12 +43,13 @@ class _SuraDetailsState extends State<SuraDetails> {
                         borderRadius: BorderRadius.only(
                             topRight: Radius.circular(25),
                             bottomLeft: Radius.circular(25)),
-                        border: Border.all(color: MyThemeData.colorGold)),
+                        border: Border.all(
+                            color: Theme.of(context).colorScheme.primary)),
                     height: MediaQuery.of(context).size.height * .80,
                     margin: EdgeInsets.symmetric(horizontal: 18),
                     child: ListView.separated(
                         separatorBuilder: (_, index) => Divider(
-                              color: MyThemeData.colorGold,
+                              color: Theme.of(context).colorScheme.primary,
                               indent: 30,
                               endIndent: 30,
                             ),
