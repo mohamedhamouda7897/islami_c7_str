@@ -4,6 +4,7 @@ import 'package:islami_c7_str/home/tabs/quran.dart';
 import 'package:islami_c7_str/home/tabs/radio.dart';
 import 'package:islami_c7_str/home/tabs/sebha.dart';
 import 'package:islami_c7_str/my_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -28,13 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Scaffold(
           appBar: AppBar(
             title: Text(
-              'Islami',
+              AppLocalizations.of(context)!.title,
               style: Theme.of(context).textTheme.headline1,
             ),
             centerTitle: true,
           ),
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: MyThemeData.colorGold,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             onTap: (index) {
               currentIndex = index;
               setState(() {});
@@ -44,22 +45,22 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/quran.png')),
                 label: 'Quran',
-                backgroundColor: MyThemeData.colorGold,
+                backgroundColor: Theme.of(context).colorScheme.primary,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/radio.png')),
                 label: 'Radio',
-                backgroundColor: MyThemeData.colorGold,
+                backgroundColor: Theme.of(context).colorScheme.primary,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/sebaha.png')),
                 label: 'Sebha',
-                backgroundColor: MyThemeData.colorGold,
+                backgroundColor: Theme.of(context).colorScheme.primary,
               ),
               BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage('assets/images/ahadeth.png')),
                 label: 'Ahadeth',
-                backgroundColor: MyThemeData.colorGold,
+                backgroundColor: Theme.of(context).colorScheme.primary,
               ),
             ],
           ),

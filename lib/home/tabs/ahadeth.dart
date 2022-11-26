@@ -16,12 +16,11 @@ class _AhadethScreenState extends State<AhadethScreen> {
     if (Ahadeth.isEmpty) {
       loadHadethFie();
     }
-
     return Column(
       children: [
         Image.asset('assets/images/hadeth_main_bg.png'),
         Divider(
-          color: MyThemeData.colorGold,
+          color: Theme.of(context).colorScheme.primary,
           thickness: 3,
         ),
         Text(
@@ -29,10 +28,10 @@ class _AhadethScreenState extends State<AhadethScreen> {
           style: Theme.of(context)
               .textTheme
               .headline1
-              ?.copyWith(color: MyThemeData.colorGold),
+              ?.copyWith(color: Theme.of(context).colorScheme.primary),
         ),
         Divider(
-          color: MyThemeData.colorGold,
+          color: Theme.of(context).colorScheme.primary,
           thickness: 3,
         ),
         Ahadeth.isEmpty
@@ -40,7 +39,7 @@ class _AhadethScreenState extends State<AhadethScreen> {
             : Expanded(
                 child: ListView.separated(
                     separatorBuilder: (_, index) => Divider(
-                          color: MyThemeData.colorGold,
+                      color: Theme.of(context).colorScheme.primary,
                           indent: 30,
                           endIndent: 30,
                         ),
