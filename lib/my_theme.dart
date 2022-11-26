@@ -51,15 +51,16 @@ class MyThemeData {
         brightness: Brightness.dark,
       ),
       appBarTheme: AppBarTheme(
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          iconTheme: IconThemeData(color: darkPrimary)),
-      textTheme: TextTheme(
-          headline1: TextStyle(
-              fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
-          subtitle1: TextStyle(fontSize: 20, color: yellowColor)),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: darkPrimary,
-          selectedItemColor: yellowColor,
-          unselectedItemColor: Colors.white));
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        iconTheme: IconThemeData(color: darkPrimary)),
+    textTheme: TextTheme(
+        headline1: TextStyle(
+            fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
+        subtitle1: TextStyle(fontSize: 20, color: yellowColor)),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: darkPrimary,
+        selectedItemColor: yellowColor,
+        unselectedItemColor: Colors.white),
+  );
 }

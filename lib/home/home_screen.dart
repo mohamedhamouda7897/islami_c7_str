@@ -3,8 +3,11 @@ import 'package:islami_c7_str/home/tabs/ahadeth.dart';
 import 'package:islami_c7_str/home/tabs/quran.dart';
 import 'package:islami_c7_str/home/tabs/radio.dart';
 import 'package:islami_c7_str/home/tabs/sebha.dart';
+import 'package:islami_c7_str/home/tabs/settings/setting_tab.dart';
 import 'package:islami_c7_str/my_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_c7_str/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -19,10 +22,11 @@ class _HomeScreenState extends State<HomeScreen> {
 // devdsdfsf
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Stack(
       children: [
         Image.asset(
-          'assets/images/background.png',
+          provider.getBackground(),
           width: double.infinity,
           fit: BoxFit.fitWidth,
         ),
@@ -62,6 +66,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: 'Ahadeth',
                 backgroundColor: Theme.of(context).colorScheme.primary,
               ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                label: 'Setting',
+                backgroundColor: Theme.of(context).colorScheme.primary,
+              ),
             ],
           ),
           body: tabs[currentIndex],
@@ -74,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
     QuranScreen(),
     RadioScreen(),
     SebhaScreen(),
-    AhadethScreen()
+    AhadethScreen(),
+    SettingTab()
   ];
 }
