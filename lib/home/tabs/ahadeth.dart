@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_c7_str/hadeth_deatils/hadeth_details.dart';
 import 'package:islami_c7_str/my_theme.dart';
 
 class AhadethScreen extends StatefulWidget {
@@ -45,10 +46,16 @@ class _AhadethScreenState extends State<AhadethScreen> {
                         ),
                     itemCount: Ahadeth.length,
                     itemBuilder: (context, index) {
-                      return Text(
-                        Ahadeth[index].title,
-                        style: Theme.of(context).textTheme.subtitle1,
-                        textAlign: TextAlign.center,
+                      return InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, HadethDetails.routeName,
+                              arguments: Ahadeth[index]);
+                        },
+                        child: Text(
+                          Ahadeth[index].title,
+                          style: Theme.of(context).textTheme.subtitle1,
+                          textAlign: TextAlign.center,
+                        ),
                       );
                     }),
               )
@@ -58,14 +65,14 @@ class _AhadethScreenState extends State<AhadethScreen> {
 
   void loadHadethFie() async {
     String content = await rootBundle.loadString('assets/files/ahadeth.txt');
-    List<String> Allahadeth = content.trim().split('#');
+    List<String> Allahadeth = content.trim().split('#\r\n');
 // for loop
 
     for (int i = 0; i < Allahadeth.length; i++) {
       String hadeth = Allahadeth[i];
       print(hadeth);
       print('---------------------');
-      List<String> HadethLines = hadeth.trim().split('\n');
+      List<String> HadethLines = hadeth.split('\n');
       String title = HadethLines[0];
       print('===============');
       print('------------$title---------');
