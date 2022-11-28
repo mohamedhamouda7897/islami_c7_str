@@ -26,21 +26,35 @@ class ThemeBottomSheet extends StatelessWidget {
                 pro.changeTheme(ThemeMode.dark);
               },
               child:
-                  ThemeItem(context, 'Dark', pro.themeMode == ThemeMode.dark)),
+              ThemeItem(context, 'Dark', pro.themeMode == ThemeMode.dark)),
         ],
       ),
     );
   }
 
-  Widget ThemeItem(BuildContext context, String text, bool isSelected) => Row(
+
+  Widget ThemeItem(BuildContext context,
+      String text,
+      bool isSelected) =>
+      Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             text,
-            style: Theme.of(context).textTheme.subtitle1?.copyWith(
+            style: Theme
+                .of(context)
+                .textTheme
+                .subtitle1
+                ?.copyWith(
                 color: isSelected
-                    ? Theme.of(context).colorScheme.secondary
-                    : Theme.of(context).colorScheme.onPrimary),
+                    ? Theme
+                    .of(context)
+                    .colorScheme
+                    .secondary
+                    : Theme
+                    .of(context)
+                    .colorScheme
+                    .onPrimary),
           ),
           Icon(
             Icons.done,
