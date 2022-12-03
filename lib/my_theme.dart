@@ -33,7 +33,6 @@ class MyThemeData {
           backgroundColor: lightprimary,
           selectedItemColor: colorBlack,
           unselectedItemColor: Colors.white));
-
   static ThemeData darkTheme = ThemeData(
       primaryColor: darkPrimary,
       scaffoldBackgroundColor: Colors.transparent,
